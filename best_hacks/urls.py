@@ -20,6 +20,6 @@ from best_hacks.info_map import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('best_hacks.info_map.urls')),
-    path('consequences', views.consequences, name='consequences'),
-    path('prevention', views.prevention, name='prevention')
+    path('consequences/', views.consequences, name='consequences'),
+    path('prevention/', views.prevention, name='prevention')
 ]
