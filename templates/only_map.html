@@ -1,9 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    {% block stylesheets %}
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static "css/base.css" %}"/>
     <link rel="stylesheet" href="../static/css/only_map.css">
     <meta charset="utf-8">
-    <title>Dataviz example with jQuery Mapael</title>
+    <title>CO2 emission map</title>
     <meta charset="utf-8"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
@@ -14,8 +22,10 @@
     <script src="../static/js/maps/world_countries.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/map.js"></script>
     <script type="text/javascript" src="../static/js/changes_map.js"></script>
+    {% endblock %}
 </head>
 <body>
+{% block content %}
 <div class="container">
     <div class="world">
         <div class="map"></div>
@@ -35,6 +45,6 @@
     </div>
     <div style="clear: both;"></div>
 </div>
-</div>
+{% endblock %}
 </body>
 </html>
