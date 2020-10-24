@@ -100,3 +100,57 @@ svg {
 .mapael .zoomOut {
     top: 50px;
 }
+
+#sidePanel{
+    border-radius: 4px 0px 0px 4px;
+    left: auto;
+    right: -304px;
+    padding: 4px 0px 4px 4px;
+    position: fixed;
+    bottom: 10px;
+    transition: transform 0.4s;
+    width: 300px;
+    z-index: 1;
+    height: auto;
+}
+
+#sidePanel:hover {
+    transform: translateX(-304px);
+}
+
+#sidePanel #panelContent{
+    background: #fff;
+    min-height: 200px;
+    padding: 10px;
+    position: relative;
+    border: solid #000;
+    border-radius: 4px 0 0 4px;
+    border-width: 4px 0 4px 4px;
+}
+
+#sidePanel #panelTitle {
+    background: #fff;
+    border: solid #000;
+    border-radius: 4px 4px 0 0;
+    border-width: 0 4px 4px;
+    cursor: default;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: -74px;
+    text-align: center;
+    top: 70px;
+    transform: rotate(90deg);
+    width: 106px;
+}
+#panelContent .areaLegend{
+    min-height: 100px;
+    position: relative;
+    top: 0;
+}
+#panelContent .plotLegend{
+    min-height: 100px;
+    position: relative;
+    top: 15px;
+}
