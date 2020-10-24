@@ -10701,7 +10701,6 @@ $(function () {
                 },
                 "PL": {
                     "value": 13967230,
-                    "href": "http://en.wikipedia.org/w/index.php?search=Poland",
                     "tooltip": {
                         "content": "<span style=\"font-weight:bold;\">Poland</span><br />Population : 13967230"
                     }

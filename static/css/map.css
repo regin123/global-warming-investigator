@@ -60,7 +60,7 @@ h2 {
 .mapael .map {
     margin-right: 228px;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     background-color: #232323;
     border-radius: 5px;
 }
