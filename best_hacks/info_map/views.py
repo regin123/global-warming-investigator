@@ -13,3 +13,11 @@ def display_map(request):
 
 def display_map_poland(request):
     return render(request, 'Poland.html', {})
+
+
+def consequences(request):
+    return render(request, 'consequences.html')
+
+
+def prevention(request):
+    return render(request, 'prevention.html')
