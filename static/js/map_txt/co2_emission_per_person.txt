@@ -1,0 +1,179 @@
+// Default plots params
+    var plots = {/*
+        "paris": {
+            "latitude": 48.86,
+            "longitude": 2.3444,
+            "text": {
+                "position": "left",
+                "content": "Paris"
+            },
+            "href": "http://en.wikipedia.org/w/index.php?search=Paris"
+        },
+        "newyork": {
+            "latitude": 40.667,
+            "longitude": -73.833,
+            "text": {
+                "content": "New york"
+            },
+            "href": "http://en.wikipedia.org/w/index.php?search=New York"
+        },
+        "sydney": {
+            "latitude": -33.917,
+            "longitude": 151.167,
+            "text": {
+                "content": "Sydney"
+            },
+            "href": "http://en.wikipedia.org/w/index.php?search=Sidney"
+        },
+        "brasilia": {
+            "latitude": -15.781682,
+            "longitude": -47.924195,
+            "text": {
+                "content": "Brasilia"
+            },
+            "href": "http://en.wikipedia.org/w/index.php?search=Brasilia"
+        },
+        "tokyo": {
+            "latitude": 35.687418,
+            "longitude": 139.692306,
+            "text": {
+                "content": "Tokyo"
+            },
+            "href": "http://en.wikipedia.org/w/index.php?search=Tokyo"
+        }*/
+    };
+
+    // Knob initialisation (for selecting a year)
+    $(".knob").knob({
+        release: function (value) {
+            $(".world").trigger('update', [{
+                mapOptions: data[value],
+                animDuration: 300
+            }]);
+        }
+    });
+
+    // Mapael initialisation
+    // Mapael initialisation
+    $world = $(".world");
+    $world.mapael({
+        map: {
+            name: "world_countries",
+            defaultArea: {
+                attrs: {
+                    fill: "#fff",
+                    stroke: "#232323",
+                    "stroke-width": 0.3
+                }
+            },
+            defaultPlot: {
+                text: {
+                    attrs: {
+                        fill: "#b4b4b4",
+                        "font-weight": "normal"
+                    },
+                    attrsHover: {
+                        fill: "#fff",
+                        "font-weight": "bold"
+                    }
+                }
+            }
+            , zoom: {
+                enabled: true
+                , step: 0.1
+                , maxLevel: 20
+            }
+        },
+        legend: {
+            area: {
+                display: true,
+                title: "Country population",
+                marginBottom: 7,
+                slices: [
+                    {
+                        max: 10,
+                        attrs: {
+                            fill: "#2BE02A"
+                        },
+                        label: "Less than 5M"
+                    },
+                    {
+                        min: 10,
+                        max: 40,
+                        attrs: {
+                            fill: "#EFF22D"
+                        },
+                        label: "Between 5M and 10M"
+                    },
+                    {
+                        min: 40,
+                        max: 80,
+                        attrs: {
+                            fill: "#F69F11"
+                        },
+                        label: "Between 10M and 50M"
+                    },
+                    {
+                        min: 80,
+                        attrs: {
+                            fill: "#FA0A00"
+                        },
+                        label: "More than 50M"
+                    }
+                ]
+            },
+            plot: {
+                display: false,
+                title: "City population",
+                marginBottom: 6,
+                slices: [
+                    {
+                        type: "circle",
+                        max: 500000,
+                        attrs: {
+                            fill: "#FD4851",
+                            "stroke-width": 1
+                        },
+                        attrsHover: {
+                            transform: "s1.5",
+                            "stroke-width": 1
+                        },
+                        label: "Less than 500 000",
+                        size: 10
+                    },
+                    {
+                        type: "circle",
+                        min: 500000,
+                        max: 1000000,
+                        attrs: {
+                            fill: "#FD4851",
+                            "stroke-width": 1
+                        },
+                        attrsHover: {
+                            transform: "s1.5",
+                            "stroke-width": 1
+                        },
+                        label: "Between 500 000 and 1M",
+                        size: 20
+                    },
+                    {
+                        type: "circle",
+                        min: 1000000,
+                        attrs: {
+                            fill: "#FD4851",
+                            "stroke-width": 1
+                        },
+                        attrsHover: {
+                            transform: "s1.5",
+                            "stroke-width": 1
+                        },
+                        label: "More than 1M",
+                        size: 30
+                    }
+                ]
+            }
+        },
+        plots: $.extend(true, {}, data[2010]['plots'], plots),
+        areas: data[2010]['areas']
+    });
+});
