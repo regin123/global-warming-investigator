@@ -10,3 +10,6 @@ def display_map(request):
     template = loader.get_template('only_map.html')
     response_body = template.render({'current_user': request.user})
     return HttpResponse(response_body)
+
+def display_map_poland(request):
+    return render(request, 'Poland.html', {})
