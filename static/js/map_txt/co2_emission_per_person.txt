@@ -91,30 +91,30 @@
                 marginBottom: 7,
                 slices: [
                     {
-                        max: 10,
+                        max: 5,
                         attrs: {
                             fill: "#2BE02A"
                         },
                         label: "Less than 5M"
                     },
                     {
-                        min: 10,
-                        max: 40,
+                        min: 5,
+                        max: 10,
                         attrs: {
                             fill: "#EFF22D"
                         },
                         label: "Between 5M and 10M"
                     },
                     {
-                        min: 40,
-                        max: 80,
+                        min: 10,
+                        max: 15,
                         attrs: {
                             fill: "#F69F11"
                         },
                         label: "Between 10M and 50M"
                     },
                     {
-                        min: 80,
+                        min: 15,
                         attrs: {
                             fill: "#FA0A00"
                         },

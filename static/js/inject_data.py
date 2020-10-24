@@ -5,12 +5,12 @@ import sys
 if __name__ == "__main__":
     """Main module"""
 
-    if len(sys.argv) != 4:
-        print("Program takes exactly 3 argument")
+    if len(sys.argv) != 3:
+        print("Program takes exactly 2 argument")
         quit()
     data_name = sys.argv[1]
-    map_1_name = sys.argv[2]
-    map_2_name = sys.argv[3]
+    map_1_name = "original_map_part_1.txt"
+    map_2_name = sys.argv[2]
     # print(data_name)
     map_txt_folder = os.path.join(os.getcwd(), 'map_txt') 
     data_folder = os.path.join(os.path.dirname(os.path.dirname(os.getcwd())), 'data')
