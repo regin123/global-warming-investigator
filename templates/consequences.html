@@ -20,6 +20,9 @@
 <body>
 {% block content %}
     <div class="container">
+        <div class="intro">
+            What are the consequences of excessive CO<sub>2</sub> emission? How does it change our planet and in consequences our lives?
+        </div>
         <div class="title">
             Icebergs melting
         </div>
@@ -41,6 +44,28 @@
             {% load static %}
             <img src="{% static "img/flood.jpg" %}">
         </div>
+        <div class="title">
+            Loss of biodiversity
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img src="{% static "img/biodiversity.jpg" %}">
+        </div>
+        <div class="title">
+            Bees extinction, and consequently less crops (plants not pollinated) implies problems with food production
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img src="{% static "img/bees.jpg" %}">
+        </div>
+        <div class="title">
+            Forest fires
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img src="{% static "img/forest-fire.jpg" %}">
+        </div>
+
 
     </div>
 {% endblock %}

@@ -57,6 +57,7 @@ html, body{
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 #footer {
@@ -82,4 +83,15 @@ html, body{
 }
 .pictures img{
     border-radius: 4px;
+}
+
+.intro{
+    text-shadow: 2px 0 #444;
+    text-align: center;
+    width: 70%;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
 }
