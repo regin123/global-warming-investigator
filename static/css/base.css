@@ -1,6 +1,8 @@
 html, body{
     font-family: "Lucida Console", Courier, monospace;
-    background-color: #B78D92;
+    background: url('../images/dark_background1.jpg') no-repeat;
+    background-size: cover;
+    /*background-color: #B78D92;*/
 
 }
 /*div zbiorczy menu*/
