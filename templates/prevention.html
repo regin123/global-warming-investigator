@@ -33,10 +33,20 @@
             {% load static %}
             <img id="bicycle" src="{% static "img/bicycle-12.png" %}">
         </div>
-        <div id="descript">
+        <div class="descript">
             Average CO<sub>2</sub> emission for diesel cars is equal to 122,3 g/km.
             Just choosing bicycle on a 5 km way to uni every day reduces emission of CO<sub>2</sub> of about
             <span style="font-weight: bold;">165 kg</span>  in a year.
+        </div>
+        <div class="title">
+            Don't buy new things. Use what you've already got!
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img src="{% static "img/clothes.jpg" %}">
+        </div>
+        <div class="descript">
+            It's very important not to produce more products. We can't eat less, but we can make good use of what we buy.
         </div>
         <div class="title">
             Avoid flying by planes
@@ -45,10 +55,30 @@
             {% load static %}
             <img id="bicycle" src="{% static "img/plane.png" %}">
         </div>
-        <div id="descript">
+        <div class="descript">
             Average CO<sub>2</sub> emission for plane is around 90 km per passenger per hour.
             If you resign from two trips a year travelling by plane on an average flight, you will reduce the emission
             of CO<sub>2</sub> by <span style="font-weight: bold;">3 tones</span> a year!
+        </div>
+        <div class="title">
+            Cut out meat.
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img src="{% static "img/meat.jpg" %}">
+        </div>
+        <div class="descript">
+            Global livestock emits about 7.1 Gt of Co2-equiv per year. Is this burger really worth it?
+        </div>
+        <div class="intro">
+            There is much much more examples on how you could make your carbon footprint shrink. It takes one question to
+            google, two minutes of research and just <span style="font-weight: bold"> changing your habits</span>.
+        </div>
+        <div id="more_info">
+            Here are some examples:<br/>
+            https://www.goingzerowaste.com/blog/5-ways-to-reduce-your-carbon-footprint/<br/>
+            https://cotap.org/reduce-carbon-footprint/<br/>
+            https://www.nytimes.com/guides/year-of-living-better/how-to-reduce-your-carbon-footprint<br/>
         </div>
     </div>
 {% endblock %}
