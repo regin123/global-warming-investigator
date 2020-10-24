@@ -97,7 +97,7 @@ $(function () {
                         attrs: {
                             fill: "#2BE02A"
                         },
-                        label: "Less than 5M"
+                        label: "Less than 5 tonnes"
                     },
                     {
                         min: 5,
@@ -105,7 +105,7 @@ $(function () {
                         attrs: {
                             fill: "#EFF22D"
                         },
-                        label: "Between 5M and 10M"
+                        label: "Between 5 and 10 tonnes"
                     },
                     {
                         min: 10,
@@ -113,14 +113,14 @@ $(function () {
                         attrs: {
                             fill: "#F69F11"
                         },
-                        label: "Between 10M and 50M"
+                        label: "Between 10 and 15 tonnes"
                     },
                     {
                         min: 15,
                         attrs: {
                             fill: "#FA0A00"
                         },
-                        label: "More than 50M"
+                        label: "More than 15 tonnes"
                     }
                 ]
             },
