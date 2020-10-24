@@ -152,3 +152,12 @@ svg {
     position: relative;
     top: 15px;
 }*/
+#graphPanel {
+    display: none;
+    left: 0;
+    top: 30%;
+    width: 400px;
+    height: 200px;
+    background-color: whitesmoke;
+    position: absolute;
+}

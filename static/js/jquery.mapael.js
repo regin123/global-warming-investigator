@@ -2166,10 +2166,19 @@
         elemClick: function (elem) {
             var self = this;
             if (elem === undefined) return;
-
             /* Handle click when href defined */
             if (!self.panning && elem.options.href !== undefined) {
-                window.open(elem.options.href, elem.options.target);
+                //window.open(elem.options.href, elem.options.target);
+                console.log(elem.mapElem[0].getAttribute('data-id'))
+                document.getElementById("graphPanel").style.display = "block"
+                var c = document.getElementById("graph-img");
+                c.setAttribute("src", "graph/"+elem.mapElem[0].getAttribute('data-id'));
+                c.setAttribute("alt", "Flower");
+                document.getElementById("graphPanel").onclick = function () {
+                    this.style.display = "none"
+
+                }
+
             }
         },
 

@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', views.display_map, name='map'),
+    path('graph/<str:country_alpha2>', views.country_graph, name='graph'),
     path('poland/', views.display_map_poland, name='Poland')
 ]
