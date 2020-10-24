@@ -2,11 +2,17 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
 }
+
 svg {
     height: 100%;
+}
+
+.plotLegend, .areaLegend{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
 }
 
 .container {
@@ -17,6 +23,18 @@ svg {
     overflow: hidden;
     min-width: 700px;
     max-width: 1200px;
+}
+
+.knobContainer {
+    position: absolute;
+    text-align: center;
+    margin: 10px;
+    bottom: 30px;
+}
+
+.knobContainer canvas {
+    cursor: pointer;
+    z-index: 1000;
 }
 
 .mapael .mapTooltip {

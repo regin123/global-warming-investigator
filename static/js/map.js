@@ -15341,7 +15341,7 @@ $(function () {
             , zoom: {
                 enabled: true
                 , step: 0.1
-                , maxLevel: 20
+                , maxLevel: 40
             }
         },
         legend: {
