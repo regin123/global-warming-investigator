@@ -19,7 +19,37 @@
 </head>
 <body>
 {% block content %}
+
     <div class="container">
+        <div class="page-title">Prevention</div>
+        <div class="intro">
+            So, what can you do to help reduce CO<sub>2</sub> emission? How can you change your life so that the planet
+            would have bigger chances to survive?
+        </div>
+        <div class="title">
+            Choose a bicycle over a car
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img id="bicycle" src="{% static "img/bicycle-12.png" %}">
+        </div>
+        <div id="descript">
+            Average CO<sub>2</sub> emission for diesel cars is equal to 122,3 g/km.
+            Just choosing bicycle on a 5 km way to uni every day reduces emission of CO<sub>2</sub> of about
+            <span style="font-weight: bold;">165 kg</span>  in a year.
+        </div>
+        <div class="title">
+            Avoid flying by planes
+        </div>
+        <div class="pictures">
+            {% load static %}
+            <img id="bicycle" src="{% static "img/plane.png" %}">
+        </div>
+        <div id="descript">
+            Average CO<sub>2</sub> emission for plane is around 90 km per passenger per hour.
+            If you resign from two trips a year travelling by plane on an average flight, you will reduce the emission
+            of CO<sub>2</sub> by <span style="font-weight: bold;">3 tones</span> a year!
+        </div>
     </div>
 {% endblock %}
 </body>
