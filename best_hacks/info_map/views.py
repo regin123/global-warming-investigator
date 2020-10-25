@@ -100,10 +100,10 @@ def count_co2(request):
         "Sydney": 116.23,
         "Chicago":  86.39
     }"""
-    fromX= cities_dictionairy[request.GET.get('fromP')][0]
-    fromY = cities_dictionairy[request.GET.get('fromP')][0]
-    toX= cities_dictionairy[request.GET.get('toP')][1]
-    toY = cities_dictionairy[request.GET.get('toP')][1]
+    fromX= cities_dictionairy[request.GET['fromP']][0]
+    fromY = cities_dictionairy[request.GET['fromP']][0]
+    toX= cities_dictionairy[request.GET['toP']][1]
+    toY = cities_dictionairy[request.GET['toP']][1]
 
     # approximate radius of earth in km
     R = 6373.0
@@ -125,4 +125,4 @@ def count_co2(request):
     print("emisja samochodu: ", 122.3 * distance / 1000, " kilogramów CO2")
     print("emisja samolotu: ", 50 * distance, " kilogramów CO2")
 
-    return 0
+    return render(request, 'polan')
