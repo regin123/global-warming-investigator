@@ -127,7 +127,7 @@
             <section id="section-count" class="wrapper">
      <hr />
       <h3>Count</h3>
-            </section></section></article>
+            </section></section></section></article>
                 <form action="/count_co2">
   <label for="fromP">FROM</label>
   <select name="fromP" id="places">
@@ -145,8 +145,13 @@
   </select>
   <br><br>
   <input type="submit" value="Count">
-                </form></section>
+                </form>
    </div>
+        {% if result %}
+            <div id="result">
+            {{ result }}
+            </div>
+        {% endif %}
 
         <form id="map-settings-form" name="map-settings-form" action="#" method="post" novalidate>
           <fieldset id="options-basic">

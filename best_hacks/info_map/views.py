@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
 from matplotlib import pyplot as plt
 import json
@@ -81,9 +81,10 @@ def union_sets(args):
     return set(frozenset(itertools.chain.from_iterable(args)))
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "POST"])
 def count_co2(request):
     cities_dictionairy = parser.get_cities_data()
+    cities = list(cities_dictionairy.keys())
     """wspolrzedneX = {
         "Warsaw": 52.12,
         "Wroclaw": 51.07,
@@ -120,9 +121,9 @@ def count_co2(request):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     distance = R * c
+    result = ""
+    result.join("Results:" + str(distance))
+    result.join("\nCar emission: " + str(122.3 * distance / 1000) + "kg of CO<sub>2</sub>")
+    result.join("\nPlane emission: " + str(50 * distance) + " kg of CO<sub>2</sub>")
 
-    print("Results:", distance)
-    print("emisja samochodu: ", 122.3 * distance / 1000, " kilogramów CO2")
-    print("emisja samolotu: ", 50 * distance, " kilogramów CO2")
-
-    return render(request, 'polan')
+    return render(request, 'Poland.html', {'cities': cities, 'result': result})
