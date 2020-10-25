@@ -85,23 +85,7 @@ def union_sets(args):
 def count_co2(request):
     cities_dictionairy = parser.get_cities_data()
     cities = list(cities_dictionairy.keys())
-    """wspolrzedneX = {
-        "Warsaw": 52.12,
-        "Wroclaw": 51.07,
-        "Krakow": 50.04,
-        "Moscow": 55.45,
-        "Sydney": 39.54,
-        "Chicago": 41.54
-    }
-    wspolrzedneY = {
-        "Warsaw": 21.02,
-        "Wroclaw": 17.2,
-        "Krakow": 19.56,
-        "Moscow": 37.37,
-        "Sydney": 116.23,
-        "Chicago":  86.39
-    }"""
-    fromX = cities_dictionairy[request.GET['fromP']][0]
+    fromX= cities_dictionairy[request.GET['fromP']][0]
     fromY = cities_dictionairy[request.GET['fromP']][0]
     toX = cities_dictionairy[request.GET['toP']][1]
     toY = cities_dictionairy[request.GET['toP']][1]
