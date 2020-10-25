@@ -8,7 +8,6 @@ import io
 import PIL
 import pylab
 from math import radians, cos, sin, asin, sqrt, atan2
-import geopy.distance
 
 # Create your views here.
 from django.template import loader
