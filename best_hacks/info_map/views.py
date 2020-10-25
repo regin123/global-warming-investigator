@@ -101,9 +101,9 @@ def count_co2(request):
         "Sydney": 116.23,
         "Chicago":  86.39
     }"""
-    fromX= cities_dictionairy[request.GET['fromP']][0]
+    fromX = cities_dictionairy[request.GET['fromP']][0]
     fromY = cities_dictionairy[request.GET['fromP']][0]
-    toX= cities_dictionairy[request.GET['toP']][1]
+    toX = cities_dictionairy[request.GET['toP']][1]
     toY = cities_dictionairy[request.GET['toP']][1]
 
     # approximate radius of earth in km
@@ -122,8 +122,9 @@ def count_co2(request):
 
     distance = R * c
     result = ""
-    result.join("Results:" + str(distance))
-    result.join("\nCar emission: " + str(122.3 * distance / 1000) + "kg of CO<sub>2</sub>")
-    result.join("\nPlane emission: " + str(50 * distance) + " kg of CO<sub>2</sub>")
-
-    return render(request, 'Poland.html', {'cities': cities, 'result': result})
+    result = result + ("Results:" + str(distance))
+    result = result + ("\nCar emission: " + str(122.3 * distance / 1000) + "kg of CO2")
+    result = result + ("\nPlane emission: " + str(50 * distance) + " kg of CO2")
+    data = dict()
+    data['result'] = result
+    return render(request, 'Poland.html', context={"data": data, "cities": cities})

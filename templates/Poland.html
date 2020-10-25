@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 <!doctype html>
-<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="nie"> <!--<![endif]-->
+<!--[if IE 7 ]>
+<html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="nie"> <!--<![endif]-->
 <head>
     {% block stylesheets %}
         {% load static %}
@@ -11,169 +15,201 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
               crossorigin="anonymous">
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-<!--
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <!--
 
 
 
- * CSSMap plugin - Poland [ https://cssmapsplugin.com/get/poland ]
- * version: 5.6.0 - June 16th, 2020
- *
- * author: Łukasz Popardowski { Winston_Wolf }
- * license: https://cssmapsplugin.com/license
- * FAQ: https://cssmapsplugin.com/faq
- *
- * email: https://cssmapsplugin.com/contact
- * twitter: @CSSMapplugin
+         * CSSMap plugin - Poland [ https://cssmapsplugin.com/get/poland ]
+         * version: 5.6.0 - June 16th, 2020
+         *
+         * author: Łukasz Popardowski { Winston_Wolf }
+         * license: https://cssmapsplugin.com/license
+         * FAQ: https://cssmapsplugin.com/faq
+         *
+         * email: https://cssmapsplugin.com/contact
+         * twitter: @CSSMapplugin
 
 
 
 
--->
-  <link rel="stylesheet" type="text/css" href="../static/css/Poland_style.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="../static/css/cssmap-poland/cssmap-poland.css" media="screen" />
-                <link rel="stylesheet" href="{% static "css/base.css" %}"/>
+        -->
+        <link rel="stylesheet" type="text/css" href="../static/css/Poland_style.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="../static/css/cssmap-poland/cssmap-poland.css" media="screen"/>
+        <link rel="stylesheet" href="{% static "css/base.css" %}"/>
 
 
-  <title>Poland</title>
+        <title>Poland</title>
     {% endblock %}
 </head>
-<body id="Poland">
-    {% block content %}
-   <div class="wrapper">
+<p id="Poland">
+{% block content %}
+    <div class="wrapper">
 
 
-  <article class="page-content">
+        <article class="page-content">
 
-    <!-- section-map -->
-    <section id="section-map">
-     <hr />
+            <!-- section-map -->
+            <section id="section-map">
+                <hr/>
 
-      <!-- MAP -->
-      <div id="display-map" class="display-demo-map">
-        <!-- CSSMap - Poland -->
-<div id="map-poland">
- <ul class="poland">
-       <li class="pl1"><a href="https://air.wroclaw.pios.gov.pl/">Lower Silesia - 45</a></li>
-       <li class="pl15"><a href="https://powietrze.poznan.wios.gov.pl/">Greater Poland - 40</a></li>
-       <li class="pl7"><a href="https://airly.org/pl/gdzie-jest-najczystsze-powietrze-w-warszawie/">Masovia - 40</a></li>
-        <li class="pl11"><a href="     https://aqicn.org/city/gdansk/pl/">Pomerania - 18</a></li>
-  <li class="pl2"><a href="#section-kujawsko-pomorskie">Kuyavian-Pomeranian - 40</a></li>
-  <li class="pl3"><a href="https://aqicn.org/map/lublin/pl/">Lublin - 42</a></li>
-  <li class="pl4"><a href="#section-lubuskie">Lubusz - 34</a></li>
-  <li class="pl5"><a href="https://aqicn.org/map/lodz/pl/">Lodz - 58</a></li>
-  <li class="pl6"><a href="https://aqicn.org/map/krakow/pl/">Lesser Poland - 76</a></li>
-  <li class="pl8"><a href="https://aqicn.org/map/opole/pl/">Opole - 58</a></li>
-  <li class="pl9"><a href="https://aqicn.org/map/rzeszow/pl/">Subcarpathia - 48</a></li>
-  <li class="pl10"><a href="https://aqicn.org/map/bialystok/pl/">Podlaskie - 11</a></li>
-  <li class="pl12"><a href="https://aqicn.org/map/katowice/pl/">Silesia - 72</a></li>
-  <li class="pl13"><a href="https://aqicn.org/map/kielce/pl/">Holy Cross Province - 47</a></li>
-  <li class="pl14"><a href="https://aqicn.org/map/olsztyn/pl/">Warmia-Masuria - 22</a></li>
-  <li class="pl16"><a href="https://aqicn.org/map/szczecin/pl/">West Pomerania - 20</a></li>
+                <!-- MAP -->
+                <div id="display-map" class="display-demo-map">
+                    <!-- CSSMap - Poland -->
+                    <div id="map-poland">
+                        <ul class="poland">
+                            <li class="pl1"><a href="https://air.wroclaw.pios.gov.pl/">Lower Silesia - 45</a></li>
+                            <li class="pl15"><a href="https://powietrze.poznan.wios.gov.pl/">Greater Poland - 40</a>
+                            </li>
+                            <li class="pl7"><a
+                                    href="https://airly.org/pl/gdzie-jest-najczystsze-powietrze-w-warszawie/">Masovia -
+                                40</a></li>
+                            <li class="pl11"><a href="     https://aqicn.org/city/gdansk/pl/">Pomerania - 18</a></li>
+                            <li class="pl2"><a href="#section-kujawsko-pomorskie">Kuyavian-Pomeranian - 40</a></li>
+                            <li class="pl3"><a href="https://aqicn.org/map/lublin/pl/">Lublin - 42</a></li>
+                            <li class="pl4"><a href="#section-lubuskie">Lubusz - 34</a></li>
+                            <li class="pl5"><a href="https://aqicn.org/map/lodz/pl/">Lodz - 58</a></li>
+                            <li class="pl6"><a href="https://aqicn.org/map/krakow/pl/">Lesser Poland - 76</a></li>
+                            <li class="pl8"><a href="https://aqicn.org/map/opole/pl/">Opole - 58</a></li>
+                            <li class="pl9"><a href="https://aqicn.org/map/rzeszow/pl/">Subcarpathia - 48</a></li>
+                            <li class="pl10"><a href="https://aqicn.org/map/bialystok/pl/">Podlaskie - 11</a></li>
+                            <li class="pl12"><a href="https://aqicn.org/map/katowice/pl/">Silesia - 72</a></li>
+                            <li class="pl13"><a href="https://aqicn.org/map/kielce/pl/">Holy Cross Province - 47</a>
+                            </li>
+                            <li class="pl14"><a href="https://aqicn.org/map/olsztyn/pl/">Warmia-Masuria - 22</a></li>
+                            <li class="pl16"><a href="https://aqicn.org/map/szczecin/pl/">West Pomerania - 20</a></li>
 
- </ul>
-</div>
-<!-- END OF THE CSSMap - Poland -->
-        <div id="demo-form-fields" class="demo-form-fields">
-          <ul>
-            <li><label for="demo-select">Select dropdown</label><div class="select-field"><select id="demo-select" name="demo-select" class="hidden-field"><option value="0">-- Select location</option></select></div></li>
-            <li><label for="demo-input">Input field</label><input type="text" id="demo-input" name="demo-input" class="hidden-field" /></li>
-          </ul>
-        </div>
-<div id="demo-agents" class="demo-agents-list wrapper">
- <ul>
- 
- </ul>
-</div>
-<div id="demo-markers">
- <ul class="cssmap-pins">
-  <li class="cssmap-pin" data-cssmap-coords="280,395">
+                        </ul>
+                    </div>
+                    <!-- END OF THE CSSMap - Poland -->
+                    <div id="demo-form-fields" class="demo-form-fields">
+                        <ul>
+                            <li><label for="demo-select">Select dropdown</label>
+                                <div class="select-field"><select id="demo-select" name="demo-select"
+                                                                  class="hidden-field">
+                                    <option value="0">-- Select location</option>
+                                </select></div>
+                            </li>
+                            <li><label for="demo-input">Input field</label><input type="text" id="demo-input"
+                                                                                  name="demo-input"
+                                                                                  class="hidden-field"/></li>
+                        </ul>
+                    </div>
+                    <div id="demo-agents" class="demo-agents-list wrapper">
+                        <ul>
 
-   <div class="cssmap-tooltip-content">
-    Vivamus rutrum consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.
-   </div>
-   <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25" alt="pin"/></a>
+                        </ul>
+                    </div>
+                    <div id="demo-markers">
+                        <ul class="cssmap-pins">
+                            <li class="cssmap-pin" data-cssmap-coords="280,395">
 
-  </li>
-  <li class="cssmap-pin" data-cssmap-coords="650,420">
+                                <div class="cssmap-tooltip-content">
+                                    Vivamus rutrum consectetur quis placerat neque lobortis. Nam vestibulum, arcu
+                                    sodales feugiat.
+                                </div>
+                                <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25"
+                                                                       alt="pin"/></a>
 
-
-   <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25" alt="pin"/></a>
-
-  </li>
- </ul>
-</div>
-      </div>
-      <!-- END OF THE MAP -->
-
-     <div class="wrapper">
-     </div><!-- END .wrapper -->
-    </section>
-    -->
-        <!-- SECTION info -->
-    <section id="section-info" class="wrapper">
-     <hr />
-      <h3>Informations</h3>
-        <p style="color:white;">Number of days with exceeding the daily PM10 concentration.
-        All data was downloaded from the website of <a href="https://www.nik.gov.pl/aktualnosci/dbaj-o-zdrowie-nie-oddychaj.html"> the Supreme Audit Office </a></p>
-
-        <section id="section-info2" class="wrapper">
-     <hr />
-      <h3>What's PM10</h3>
-            <p style="color:white;"> PM10 is a mixture of airborne particles that do not exceed 10 micrograms in diameter. It is harmful due to the content of elements such as benzopyrene, furans, dioxins - in a word, carcinogenic heavy metals. PM10 is a particulate matter which, above all, has a negative effect on the respiratory system. It is he who is responsible for coughing attacks, wheezing, worsening of the condition of people with asthma or acute, violent bronchitis. PM10 also indirectly affects the rest of the body, including increasing the risk of a heart attack and stroke.<a href="https://airly.org/pl/pyl-zawieszony-czym-jest-pm10-a-czym-pm2-5-aerozole-atmosferyczne/"> More info here </a></p>
+                            </li>
+                            <li class="cssmap-pin" data-cssmap-coords="650,420">
 
 
-            <section id="section-count" class="wrapper">
-     <hr />
-      <h3>Count</h3>
-            </section></section></section></article>
-                <form action="/count_co2">
-  <label for="fromP">FROM</label>
-  <select name="fromP" id="places">
-      {% for city in cities %}
-      <option value={{ city }}>{{ city }}</option>
-      {% endfor %}
-  </select>
-  <br><br>
+                                <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25"
+                                                                       alt="pin"/></a>
 
-  <label for="toP">TO</label>
-  <select name="toP" id="places">
-      {% for city in cities %}
-      <option value={{ city }}>{{ city }}</option>
-      {% endfor %}
-  </select>
-  <br><br>
-  <input type="submit" value="Count">
-                </form>
-   </div>
-        {% if result %}
-            <div id="result">
-            {{ result }}
-            </div>
-        {% endif %}
-
-        <form id="map-settings-form" name="map-settings-form" action="#" method="post" novalidate>
-          <fieldset id="options-basic">
-            <ul>
-              <li class="inline-label">
-                <label for="map-set-size">Size (map width)</label>
-                <div class="select-field">
-                 <select id="map-set-size" name="map-set-size">
-		<option value="960" selected>960 px</option>
-                 </select>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </li>
-            </ul>
-          </fieldset>
+                <!-- END OF THE MAP -->
+
+                <div class="wrapper">
+                </div><!-- END .wrapper -->
+            </section>
+            -->
+            <!-- SECTION info -->
+            <section id="section-info" class="wrapper">
+                <hr/>
+                <h3>Informations</h3>
+                <p style="color:white;">Number of days with exceeding the daily PM10 concentration.
+                    All data was downloaded from the website of <a
+                            href="https://www.nik.gov.pl/aktualnosci/dbaj-o-zdrowie-nie-oddychaj.html"> the Supreme
+                        Audit Office </a></p>
+
+                <section id="section-info2" class="wrapper">
+                    <hr/>
+                    <h3>What's PM10</h3>
+                    <p style="color:white;"> PM10 is a mixture of airborne particles that do not exceed 10 micrograms in
+                        diameter. It is harmful due to the content of elements such as benzopyrene, furans, dioxins - in
+                        a word, carcinogenic heavy metals. PM10 is a particulate matter which, above all, has a negative
+                        effect on the respiratory system. It is he who is responsible for coughing attacks, wheezing,
+                        worsening of the condition of people with asthma or acute, violent bronchitis. PM10 also
+                        indirectly affects the rest of the body, including increasing the risk of a heart attack and
+                        stroke.<a
+                                href="https://airly.org/pl/pyl-zawieszony-czym-jest-pm10-a-czym-pm2-5-aerozole-atmosferyczne/">
+                            More info here </a></p>
+
+
+                    <section id="section-count" class="wrapper">
+                        <hr/>
+                        <h3>Count CO2 emissions</h3>
+                    </section>
+                </section>
+            </section>
+        </article>
+        <form action="/count_co2">
+            <label for="fromP">FROM</label>
+            <select name="fromP" id="places">
+                {% for city in cities %}
+                    <option value={{ city }}>{{ city }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <label for="toP">TO</label>
+            <select name="toP" id="places">
+                {% for city in cities %}
+                    <option value={{ city }}>{{ city }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="Count">
         </form>
-      <!-- END OF THE MAP SETTINGS -->
+
+    <section id="section-info3" class="wrapper">
+    <hr/>
+    <h3>Results</h3>
+
+    <div id="result" style="color:white;"><p style="color:white;">
+        {% for key,value in data.items %}
+            <p style="color:white;">{{ data.result }}</p>
+        {% endfor %}
+    </div></p>
+                        </section>
+
+    <form id="map-settings-form" name="map-settings-form" action="#" method="post" novalidate>
+        <fieldset id="options-basic">
+            <ul>
+                <li class="inline-label">
+                    <label for="map-set-size">Size (map width)</label>
+                    <div class="select-field">
+                        <select id="map-set-size" name="map-set-size">
+                            <option value="960" selected>960 px</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <!-- END OF THE MAP SETTINGS -->
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cssmapsplugin.com/5/jquery.cssmap.min.js"></script>
-<script type="text/javascript" src="../static/js/Poland_script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cssmapsplugin.com/5/jquery.cssmap.min.js"></script>
+    <script type="text/javascript" src="../static/js/Poland_script.js"></script>
 {% endblock %}
 </body>
 </html>
