@@ -7,18 +7,14 @@ import io
 import PIL
 import pylab
 
-# Create your views here.
-from django.template import loader
-
 
 def display_map(request):
-    data = read_json('data/original_data.json')
+    data = read_json('data/co2_emission_ton_per_person.json')
     context = generate_graphs_dict(get_countries(data), data)
-    for k, v in context.items():
-        print(k, v)
     return render(request=request,
                   template_name="only_map.html",
-                  context=context)
+                  context={"data": context})
+
 
 def display_map_poland(request):
     return render(request, 'Poland.html', {})
@@ -33,9 +29,10 @@ def prevention(request):
 
 
 def country_graph(request, country_alpha2):
-    data = read_json('data/original_data.json')
+    data = read_json('data/co2_emission_ton_per_person.json')
     x, y = get_data_country(data, country_alpha2)
     plt.plot(x, y)
+    plt.xticks(rotation=90)
     buffer = io.BytesIO()
     canvas = pylab.get_current_fig_manager().canvas
     canvas.draw()
@@ -60,10 +57,13 @@ def read_json(file):
 
 def get_data_country(data, country_alpha2):
     x, y = [], []
+    years = set()
     for year in data:
         value = float(data[year]["areas"][country_alpha2.upper()]["value"])
-        x.append(year), y.append(value)
+        x.append(int(year)), y.append(value)
+        years.add(year)
     return x, y
+
 
 def get_countries(data):
     return union_sets([set(data[k]['areas'].keys()) for k in list(data.keys())])
