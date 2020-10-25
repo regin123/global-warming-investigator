@@ -8,7 +8,7 @@ svg {
     height: 100%;
 }
 
-.plotLegend, .areaLegend{
+.plotLegend, .areaLegend {
     position: absolute;
     bottom: 5px;
     right: 5px;
@@ -101,7 +101,7 @@ svg {
     top: 50px;
 }
 
-#sidePanel{
+#sidePanel {
     border-radius: 4px 0px 0px 4px;
     left: auto;
     right: -304px;
@@ -118,7 +118,7 @@ svg {
     transform: translateX(-304px);
 }
 
-#sidePanel #panelContent{
+#sidePanel #panelContent {
     background: #fff;
     padding: 10px;
     position: relative;
@@ -144,20 +144,34 @@ svg {
     transform: rotate(90deg);
     width: 106px;
 }
-#panelContent .areaLegend{
+
+#panelContent .areaLegend {
     position: relative;
     top: 0;
-}/*
+}
+
+/*
 #panelContent .plotLegend{
     position: relative;
     top: 15px;
 }*/
 #graphPanel {
+    transition: 0.01s ease-in-out;
     display: none;
-    left: 0;
-    top: 30%;
-    width: 400px;
+    right: 40px;
+    top: 120px;
+    width: 600px;
     height: 200px;
     background-color: whitesmoke;
     position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 0 10px;
 }
+
+#graphPanel canvas {
+    border-radius: 12px;
+    box-shadow: 0 0 10px;
+
+}
+
+

@@ -9,11 +9,8 @@ import PIL
 import pylab
 from math import radians, cos, sin, asin, sqrt, atan2
 
-# Create your views here.
-from django.template import loader
-
-
 import re
+
 
 def getCities():
     with open('/data', 'r') as file:
@@ -27,29 +24,22 @@ def getCities():
                 if values[2][-1] == 'N' or values[2][-1] == 'S':
                     lat = values[1]
                     deg, minutes, direction = re.split('[°\']', lat)
-                    lat_n = (float(deg) + float(minutes)/60) * (-1 if direction in ['W', 'S'] else 1)
+                    lat_n = (float(deg) + float(minutes) / 60) * (-1 if direction in ['W', 'S'] else 1)
                     longt = values[2]
                     deg, minutes, direction = re.split('[°\']', lat)
-                    longt_n = (float(deg) + float(minutes)/60) * (-1 if direction in ['W', 'S'] else 1)
+                    longt_n = (float(deg) + float(minutes) / 60) * (-1 if direction in ['W', 'S'] else 1)
                     dic[values[0]] = [lat_n, longt_n]
 
         print(dic)
 
 
-
-
-
-
-
-
 def display_map(request):
-    data = read_json('data/original_data.json')
+    data = read_json('data/co2_emission_ton_per_person.json')
     context = generate_graphs_dict(get_countries(data), data)
-    for k, v in context.items():
-        print(k, v)
     return render(request=request,
                   template_name="only_map.html",
-                  context=context)
+                  context={"data": context})
+
 
 def display_map_poland(request):
     return render(request, 'Poland.html', {})
@@ -64,9 +54,10 @@ def prevention(request):
 
 
 def country_graph(request, country_alpha2):
-    data = read_json('data/original_data.json')
+    data = read_json('data/co2_emission_ton_per_person.json')
     x, y = get_data_country(data, country_alpha2)
     plt.plot(x, y)
+    plt.xticks(rotation=90)
     buffer = io.BytesIO()
     canvas = pylab.get_current_fig_manager().canvas
     canvas.draw()
@@ -91,10 +82,13 @@ def read_json(file):
 
 def get_data_country(data, country_alpha2):
     x, y = [], []
+    years = set()
     for year in data:
         value = float(data[year]["areas"][country_alpha2.upper()]["value"])
-        x.append(year), y.append(value)
+        x.append(int(year)), y.append(value)
+        years.add(year)
     return x, y
+
 
 def get_countries(data):
     return union_sets([set(data[k]['areas'].keys()) for k in list(data.keys())])
@@ -102,6 +96,7 @@ def get_countries(data):
 
 def union_sets(args):
     return set(frozenset(itertools.chain.from_iterable(args)))
+
 
 @require_http_methods(["GET"])
 def count_co2(request):
@@ -119,11 +114,11 @@ def count_co2(request):
         "Krakow": 19.56,
         "Moscow": 37.37,
         "Sydney": 116.23,
-        "Chicago":  86.39
+        "Chicago": 86.39
     }
-    fromX= wspolrzedneX[request.GET.get('fromP')]
+    fromX = wspolrzedneX[request.GET.get('fromP')]
     fromY = wspolrzedneY[request.GET.get('fromP')]
-    toX= wspolrzedneX[request.GET.get('toP')]
+    toX = wspolrzedneX[request.GET.get('toP')]
     toY = wspolrzedneY[request.GET.get('toP')]
 
     # approximate radius of earth in km
@@ -143,7 +138,7 @@ def count_co2(request):
     distance = R * c
 
     print("Results:", distance)
-    print("emisja samochodu: ", 122.3*distance/1000," kilogramów CO2")
-    print("emisja samolotu: ", 50*distance," kilogramów CO2")
+    print("emisja samochodu: ", 122.3 * distance / 1000, " kilogramów CO2")
+    print("emisja samolotu: ", 50 * distance, " kilogramów CO2")
 
     return 0
