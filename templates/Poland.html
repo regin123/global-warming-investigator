@@ -1,9 +1,16 @@
+{% extends 'base.html' %}
 <!doctype html>
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="nie"> <!--<![endif]-->
 <head>
+    {% block stylesheets %}
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -27,52 +34,16 @@
 -->
   <link rel="stylesheet" type="text/css" href="../static/css/Poland_style.css" media="all" />
   <link rel="stylesheet" type="text/css" href="../static/css/cssmap-poland/cssmap-poland.css" media="screen" />
+                <link rel="stylesheet" href="{% static "css/base.css" %}"/>
+
 
   <title>Poland</title>
+    {% endblock %}
 </head>
 <body id="Poland">
-
-  <header class="page-header">
+    {% block content %}
    <div class="wrapper">
-    <h1>Poland</h1>
-       Number of days with exceeding the daily PM10 concentration
 
-    <!-- MAIN MENU -->
-    <nav id="main-menu" class="main-menu-list">
-      <ul>
-        <li><a href="#section-map" class="in-nav">Top</a></li>
-          <li><a href="#section-info" class="in-nav">Informations</a></li>
-          <li><a href="#section-info2" class="in-nav">What's PM10</a></li>
-          <li><a href="../" class="in-nav">Global map</a></li>
-          <!--
-        <li><a href="#section-wielkopolska" class="in-nav">Greater Poland</a></li>
-        <li><a href="#section-dolnoslaskie" class="in-nav">Lower Silesia</a></li>
-        <li><a href="#section-slaskie" class="in-nav">Silesia</a></li>
-        <li><a href="#section-kujawsko-pomorskie" class="in-nav">Kuyavian-Pomeranian</a></li>
-        <li><a href="#section-lubelskie" class="in-nav">Lublin</a></li>
-        <li><a href="#section-lubuskie" class="in-nav">Lubusz</a></li>
-        <li><a href="#section-lodzkie" class="in-nav">Lodz</a></li>
-        <li><a href="#section-malopolskie" class="in-nav">Lesser Poland</a></li>
-        <li><a href="#section-mazowieckie" class="in-nav">Masovia</a></li>
-        <li><a href="#section-opolskie" class="in-nav">Opole</a></li>
-        <li><a href="#section-podkarpackie" class="in-nav">Subcarpathia</a></li>
-        <li><a href="#section-podlaskie" class="in-nav">podlaskie</a></li>
-        <li><a href="#section-pomorskie" class="in-nav">Pomerania</a></li>
-        <li><a href="#section-swietokrzyskie" class="in-nav">Holy Cross Province</a></li>
-        <li><a href="#section-warminskomazurskie" class="in-nav">Warmia-Masuria</a></li>
-        <li><a href="#section-zachodniopomorskie" class="in-nav">West pomerania</a></li>-->
-
-
-
-
-
-
-      </ul>
-    </nav>
-    <!-- END OF THE MAIN MENU -->
-
-   </div><!-- END .wrapper -->
-  </header>
 
   <article class="page-content">
 
@@ -264,23 +235,17 @@
                 <form action="/count_co2">
   <label for="fromP">FROM</label>
   <select name="fromP" id="places">
-      <option value="Warsaw">Warsaw</option>
-      <option value="Wroclaw">Wroclaw</option>
-      <option value="Kracow">Kracow</option>
-      <option value="Chicago">Chicago</option>
-      <option value="Moscow">Moscow</option>
-      <option value="Sydney">Sydney</option>
+      {% for city in cities %}
+      <option value={{ city }}>{{ city }}</option>
+      {% endfor %}
   </select>
   <br><br>
 
   <label for="toP">TO</label>
   <select name="toP" id="places">
-      <option value="Warsaw">Warsaw</option>
-      <option value="Wroclaw">Wroclaw</option>
-      <option value="Kracow">Kracow</option>
-      <option value="Chicago">Chicago</option>
-      <option value="Moscow">Moscow</option>
-      <option value="Sydney">Sydney</option>
+      {% for city in cities %}
+      <option value={{ city }}>{{ city }}</option>
+      {% endfor %}
   </select>
   <br><br>
   <input type="submit" value="Count">
@@ -299,13 +264,16 @@
 		<option value="960" selected>960 px</option>
                  </select>
                 </div>
+              </li>
+            </ul>
+          </fieldset>
         </form>
       <!-- END OF THE MAP SETTINGS -->
 
-  </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cssmapsplugin.com/5/jquery.cssmap.min.js"></script>
 <script type="text/javascript" src="../static/js/Poland_script.js"></script>
+{% endblock %}
 </body>
 </html>

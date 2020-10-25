@@ -8,29 +8,10 @@ import io
 import PIL
 import pylab
 from math import radians, cos, sin, asin, sqrt, atan2
+import data.polish_cities.data_parser as parser
 
-import re
-
-
-def getCities():
-    with open('/data', 'r') as file:
-        dic = {}
-        lines = file.readlines()
-        for line in lines:
-            line = line.strip("\n")
-            values = re.split("  +", line)
-
-            if len(values) == 3:
-                if values[2][-1] == 'N' or values[2][-1] == 'S':
-                    lat = values[1]
-                    deg, minutes, direction = re.split('[°\']', lat)
-                    lat_n = (float(deg) + float(minutes) / 60) * (-1 if direction in ['W', 'S'] else 1)
-                    longt = values[2]
-                    deg, minutes, direction = re.split('[°\']', lat)
-                    longt_n = (float(deg) + float(minutes) / 60) * (-1 if direction in ['W', 'S'] else 1)
-                    dic[values[0]] = [lat_n, longt_n]
-
-        print(dic)
+# Create your views here.
+from django.template import loader
 
 
 def display_map(request):
@@ -42,7 +23,9 @@ def display_map(request):
 
 
 def display_map_poland(request):
-    return render(request, 'Poland.html', {})
+    cities_dictionairy = parser.get_cities_data()
+    cities = list(cities_dictionairy.keys())
+    return render(request, 'Poland.html', {'cities': cities})
 
 
 def consequences(request):
@@ -100,7 +83,8 @@ def union_sets(args):
 
 @require_http_methods(["GET"])
 def count_co2(request):
-    wspolrzedneX = {
+    cities_dictionairy = parser.get_cities_data()
+    """wspolrzedneX = {
         "Warsaw": 52.12,
         "Wroclaw": 51.07,
         "Krakow": 50.04,
@@ -114,12 +98,12 @@ def count_co2(request):
         "Krakow": 19.56,
         "Moscow": 37.37,
         "Sydney": 116.23,
-        "Chicago": 86.39
-    }
-    fromX = wspolrzedneX[request.GET.get('fromP')]
-    fromY = wspolrzedneY[request.GET.get('fromP')]
-    toX = wspolrzedneX[request.GET.get('toP')]
-    toY = wspolrzedneY[request.GET.get('toP')]
+        "Chicago":  86.39
+    }"""
+    fromX= cities_dictionairy[request.GET.get('fromP')][0]
+    fromY = cities_dictionairy[request.GET.get('fromP')][0]
+    toX= cities_dictionairy[request.GET.get('toP')][1]
+    toY = cities_dictionairy[request.GET.get('toP')][1]
 
     # approximate radius of earth in km
     R = 6373.0
