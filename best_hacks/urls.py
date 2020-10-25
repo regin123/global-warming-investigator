@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('best_hacks.info_map.urls')),
     path('consequences/', views.consequences, name='consequences'),
-    path('prevention/', views.prevention, name='prevention')
+    path('prevention/', views.prevention, name='prevention'),
+    path('count_co2/', views.count_co2, name='count_co2'),
 ]
