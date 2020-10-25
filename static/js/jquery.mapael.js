@@ -2182,6 +2182,8 @@
                 }
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
+                    axisY: {title: "tonnes of CO2 per person"},
+                    axisX: {title: "Years"},
                     theme: "light2",
                     title: {
                         text: alpha2
