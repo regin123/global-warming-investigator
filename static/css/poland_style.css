@@ -1033,7 +1033,9 @@ div.select-field select:focus {
 .map-settings .map-settings-buttons .button {
     width: auto
 }
-
+#map-set-size{
+    z-index: 0;
+}
 #map-set-style-list li {
     width: 20%
 }
