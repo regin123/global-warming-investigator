@@ -2,48 +2,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>CO2 emission map</title>
-        <!-- css sheets -->
-        {% block stylesheets %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CO2 emission map</title>
+    {% block stylesheets %}
         {% load static %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
               crossorigin="anonymous">
         <link rel="stylesheet" href="{% static "css/base.css" %}"/>
-        {% endblock %}
+    {% endblock %}
 </head>
 <body>
-    {% block header %}
-    <header>
-			<nav class="navbar navbar-expand-xl fixed-top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div class="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+<ul class="hidden-menu">
+    <li><a href="/world_map/">World Map </a></li>
+    <li><a href="/poland/">Poland Map </a></li>
+    <li><a href="/consequences/">Consequences </a></li>
+    <li><a href="/prevention/">Prevention </a></li>
+</ul>
+{% block header %}
 
-            <div class="collapse navbar-collapse ml-auto" id="main-menu">
-                <ul class="navbar-nav navbar-right ml-auto mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/consequences/">Consequences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/prevention">Prevention</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/poland">Poland</a>
-                    </li>
-    </header>
-    {% endblock %}
-    {% block content %}
-    {% endblock %}
-    {% block footer %}
-        <footer id="footer" class="card-footer">
-            Thank you for visiting our page. Best hacks ";drop database; team 2020 &reg;
-        </footer>
-    {% endblock %}
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const hidden_menu = document.querySelector(".hidden-menu");
+        const links = document.querySelectorAll(".hidden-menu li");
+        hamburger.addEventListener('click', () => {
+            hidden_menu.classList.toggle("open");
+        });
+    </script>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block footer %}
+    <footer id="footer" class="card-footer">
+        Thank you for visiting our page. Best hacks ";drop database; team 2020 &reg;
+    </footer>
+{% endblock %}
 </body>
 </html>

@@ -1,0 +1,40 @@
+@import "base.css";
+
+#more_info {
+    width: 70%;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+#more_info a {
+    color: #111;
+    opacity: 50%;
+    transition: all 300ms ease-in-out;
+}
+
+#more_info a:hover {
+    color: #333;
+    opacity: 100%;
+    text-decoration: none;
+    font-size: 21px;
+    text-shadow: 1px 1px #222;
+}
+
+
+#bicycle {
+    width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+}
+
+
+.descript {
+    padding: 20px;
+}
+
+
+

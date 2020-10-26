@@ -7,8 +7,6 @@ import itertools
 import io
 import PIL
 import pylab
-from math import radians, cos, sin, asin, sqrt, atan2
-import data.polish_cities.data_parser as parser
 
 # Create your views here.
 from django.template import loader
@@ -18,14 +16,8 @@ def display_map(request):
     data = read_json('data/co2_emission_ton_per_person.json')
     context = generate_graphs_dict(get_countries(data), data)
     return render(request=request,
-                  template_name="only_map.html",
+                  template_name="world_map.html",
                   context={"data": context})
-
-
-def display_map_poland(request):
-    cities_dictionairy = parser.get_cities_data()
-    cities = list(cities_dictionairy.keys())
-    return render(request, 'Poland.html', {'cities': cities})
 
 
 def consequences(request):
@@ -80,35 +72,3 @@ def get_countries(data):
 def union_sets(args):
     return set(frozenset(itertools.chain.from_iterable(args)))
 
-
-@require_http_methods(["GET", "POST"])
-def count_co2(request):
-    cities_dictionairy = parser.get_cities_data()
-    cities = list(cities_dictionairy.keys())
-    fromX= cities_dictionairy[request.GET['fromP']][0]
-    fromY = cities_dictionairy[request.GET['fromP']][0]
-    toX = cities_dictionairy[request.GET['toP']][1]
-    toY = cities_dictionairy[request.GET['toP']][1]
-
-    # approximate radius of earth in km
-    R = 6373.0
-
-    lat1 = radians(fromX)
-    lon1 = radians(fromY)
-    lat2 = radians(toX)
-    lon2 = radians(toY)
-
-    dlon = lon2 - lon1
-    dlat = lat2 - lat1
-
-    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-
-    distance = R * c
-    result = ""
-    result = result + ("Results:" + str(distance))
-    result = result + ("\nCar emission: " + str(122.3 * distance / 1000) + "kg of CO2")
-    result = result + ("\nPlane emission: " + str(50 * distance) + " kg of CO2")
-    data = dict()
-    data['result'] = result
-    return render(request, 'Poland.html', context={"data": data, "cities": cities})
