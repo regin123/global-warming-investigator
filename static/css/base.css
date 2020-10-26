@@ -162,5 +162,5 @@ html, body {
     background-color: #7A4650;
     color: white;
     font-size: 15px;
-    z-index: 2000;
+    z-index: 0;
 }
