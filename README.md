@@ -1,4 +1,5 @@
-# Air pollution analyzer
+# Global warming investigator
+
 ## Table of contents
 
 * [Introduction](#Introduction)
@@ -15,7 +16,7 @@ greenhouse gas emissions. We decided to create web application that visualizes C
 air content on whole world( by country) and accordingly poland(by voivodeship). Additionally our application provides
 graph- statistics for each country. We have also implemented simple CO2 emission calculator to convince people about air pollution arisen by 
 a transport choice. To sum up when we have data visualization we can check which country product a lot of CO2 and which
-not. We are also able to notice which countries care about global warning by declining tendency of CO2 emission. 
+not. We are also able to notice which countries care about global warming by declining tendency of CO2 emission. 
 On the other hand as long as we storage from data from past years we can predict next year emission.
 ## Installation
 ```
@@ -87,7 +88,33 @@ Graph drawing on country click with canvasJS.
         },
 ```
 ## To Do
+
 - next year prediction using AI ( neural network 1-x+-1) using data from past years
+```python
+    x, y = np.array([i for i in range(10)]), np.array([i for i in range(10)])
+    x, y = x.reshape((len(x), 1)), y.reshape((len(y), 1))
+    scale_x, scale_y = MinMaxScaler(), MinMaxScaler()
+    x, y = scale_x.fit_transform(x), scale_y.fit_transform(y)
+    print(x)
+    model = Sequential()
+    model.add(Dense(64, input_dim=1, activation='softmax'))
+    model.add(Dense(64, activation='softmax'))
+    model.add(Dense(48, activation='softmax'))
+    model.add(Dense(24, activation='softmax'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='categorical_crossentropy',
+                  optimizer='adam',
+                  metrics=['accuracy'])
+    model.fit(x, y, epochs=100, batch_size=12)
+    pred_x = np.array([float(i) for i in range(10)])
+    pred_x = pred_x.reshape((len(x), 1))
+    print(pred_x)
+    yhat = model.predict(pred_x)
+    print(yhat)
+    yhat_plot = scale_y.inverse_transform(yhat)
+    print(yhat_plot)
+
+```
 ## Technologies
  - Python
  - Django
