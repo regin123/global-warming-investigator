@@ -1,4 +1,4 @@
-# Air pollution analyzer
+# Global warming investigator
 ## Table of contents
 
 * [Introduction](#Introduction)
@@ -15,7 +15,7 @@ greenhouse gas emissions. We decided to create web application that visualizes C
 air content on whole world( by country) and accordingly poland(by voivodeship). Additionally our application provides
 graph- statistics for each country. We have also implemented simple CO2 emission calculator to convince people about air pollution arisen by 
 a transport choice. To sum up when we have data visualization we can check which country product a lot of CO2 and which
-not. We are also able to notice which countries care about global warning by declining tendency of CO2 emission. 
+not. We are also able to notice which countries care about global warming by declining tendency of CO2 emission. 
 On the other hand as long as we storage from data from past years we can predict next year emission.
 ## Installation
 ```
