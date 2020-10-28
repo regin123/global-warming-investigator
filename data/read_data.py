@@ -18,13 +18,7 @@ for country in data['2003']:
 
 data = pd.read_csv('data.csv')
 print(data.head())
-#pp.pprint(map_dictionary)
-#pp.pprint(data)
-#print(len(countries_dict))
-#print(len(important_countries_name))
-# for country in important_countries_name:
-#    print(country, countries_dict[country])
-#data.fillna(0)
+
 super_clean_data = {}
 for year in data.columns[2:]: 
     super_clean_data[str(year)] = {"areas":{}}

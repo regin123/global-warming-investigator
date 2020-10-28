@@ -13,7 +13,7 @@ from django.template import loader
 
 
 def display_map(request):
-    data = read_json('data/co2_emission_ton_per_person.json')
+    data = read_json('data/co2.json')
     context = generate_graphs_dict(get_countries(data), data)
     return render(request=request,
                   template_name="world_map.html",
@@ -29,7 +29,7 @@ def prevention(request):
 
 
 def country_graph(request, country_alpha2):
-    data = read_json('data/co2_emission_ton_per_person.json')
+    data = read_json('data/co2.json')
     x, y = get_data_country(data, country_alpha2)
     plt.plot(x, y)
     plt.xticks(rotation=90)
